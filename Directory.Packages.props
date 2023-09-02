@@ -1,0 +1,24 @@
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
+    <PackageVersion Include="FluentAssertions.Analyzers" Version="0.17.5" />
+    <PackageVersion Include="xunit" Version="2.5.0" />
+    <PackageVersion Include="xunit.analyzers" Version="1.1.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageVersion Include="coverlet.msbuild" Version="6.0.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4" />
+    <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.7.30" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="3.3.4" />
+    <PackageVersion Include="Roslynator.Analyzers" Version="4.5.0" />
+    <PackageVersion Include="Roslynator.CodeAnalysis.Analyzers" Version="4.5.0" />
+    <PackageVersion Include="Roslynator.Formatting.Analyzers" Version="4.5.0" />
+    <PackageVersion Include="SonarAnalyzer.CSharp" Version="9.8.0.76515" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="2.0.83" />
+    <PackageVersion Include="SecurityCodeScan.VS2019" Version="5.6.7" />
+  </ItemGroup>
+</Project>
