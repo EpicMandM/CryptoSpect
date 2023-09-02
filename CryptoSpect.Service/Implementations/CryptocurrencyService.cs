@@ -25,7 +25,7 @@ public sealed class CryptocurrencyService : ICryptocurrencyService
     /// </summary>
     /// <param name="cryptocurrency">The cryptocurrency to add.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task AddCryptocurrencyAsync(Cryptocurrency cryptocurrency)
+    public async Task AddAsync(Cryptocurrency cryptocurrency)
     {
         await _cryptocurrencyRepository.AddAsync(cryptocurrency).ConfigureAwait(false);
     }
@@ -35,7 +35,7 @@ public sealed class CryptocurrencyService : ICryptocurrencyService
     /// </summary>
     /// <param name="id">The identifier of the cryptocurrency to delete.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task DeleteCryptocurrencyAsync(string id)
+    public async Task DeleteAsync(string id)
     {
         await _cryptocurrencyRepository.DeleteAsync(id).ConfigureAwait(false);
     }
@@ -44,7 +44,7 @@ public sealed class CryptocurrencyService : ICryptocurrencyService
     /// Asynchronously retrieves all cryptocurrencies.
     /// </summary>
     /// <returns>A Task representing the asynchronous operation, containing an IEnumerable of Cryptocurrencies.</returns>
-    public async Task<IEnumerable<Cryptocurrency>> GetAllCryptocurrenciesAsync()
+    public async Task<IEnumerable<Cryptocurrency>> GetAllAsync()
     {
         return await _cryptocurrencyRepository.GetAllAsync().ConfigureAwait(false);
     }
@@ -54,7 +54,7 @@ public sealed class CryptocurrencyService : ICryptocurrencyService
     /// </summary>
     /// <param name="id">The identifier of the cryptocurrency to retrieve.</param>
     /// <returns>A Task representing the asynchronous operation, containing the Cryptocurrency.</returns>
-    public async Task<Cryptocurrency> GetCryptocurrencyByIdAsync(string id)
+    public async Task<Cryptocurrency> GetByIdAsync(string id)
     {
         return await _cryptocurrencyRepository.GetByIdAsync(id).ConfigureAwait(false);
     }
@@ -64,7 +64,7 @@ public sealed class CryptocurrencyService : ICryptocurrencyService
     /// </summary>
     /// <param name="cryptocurrency">The cryptocurrency to update.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task UpdateCryptocurrencyAsync(Cryptocurrency cryptocurrency)
+    public async Task UpdateAsync(Cryptocurrency cryptocurrency)
     {
         await _cryptocurrencyRepository.UpdateAsync(cryptocurrency).ConfigureAwait(false);
     }
