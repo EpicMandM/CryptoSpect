@@ -5,15 +5,15 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect", "CryptoSpect\CryptoSpect.csproj", "{975FB910-21D1-463C-8E51-F7F304C85E14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect-Core", "CryptoSpect-Core\CryptoSpect-Core.csproj", "{74C2E1F1-6AC1-4E67-A94B-7B903070CC0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect.Core", "CryptoSpect.Core\CryptoSpect.Core.csproj", "{74C2E1F1-6AC1-4E67-A94B-7B903070CC0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect-DA", "CryptoSpect-DA\CryptoSpect-DA.csproj", "{617E54A0-0036-4D17-8A27-93560567BB95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect.DA", "CryptoSpect.DA\CryptoSpect.DA.csproj", "{617E54A0-0036-4D17-8A27-93560567BB95}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect-Service", "CryptoSpect-Service\CryptoSpect-Service.csproj", "{DB2CE629-2966-4B9A-900D-FDFC32AE21F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect.Service", "CryptoSpect.Service\CryptoSpect.Service.csproj", "{DB2CE629-2966-4B9A-900D-FDFC32AE21F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect-Utility", "CryptoSpect-Utility\CryptoSpect-Utility.csproj", "{ACDB0454-B333-4731-AAF0-BBA054A06876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect.Utility", "CryptoSpect.Utility\CryptoSpect.Utility.csproj", "{ACDB0454-B333-4731-AAF0-BBA054A06876}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect-Test", "CryptoSpect-Test\CryptoSpect-Test.csproj", "{ABC689E6-E0A0-487C-A2EB-8B4DF97A5FF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSpect.Test", "CryptoSpect.Test\CryptoSpect.Test.csproj", "{ABC689E6-E0A0-487C-A2EB-8B4DF97A5FF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

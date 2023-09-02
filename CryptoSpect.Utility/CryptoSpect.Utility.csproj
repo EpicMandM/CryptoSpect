@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>CryptoSpect_DA</RootNamespace>
+    <RootNamespace>CryptoSpect.Utility</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

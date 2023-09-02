@@ -15,11 +15,11 @@ CryptoSpect is a cryptocurrency monitoring ASP.NET web application. It is design
 ## Project Structure
 
 - **CryptoSpect**: Main ASP.NET Core project for handling HTTP requests and responses.
-- **CryptoSpect-Core**: Business logic and models.
-- **CryptoSpect-DA**: Database interactions and repositories.
-- **CryptoSpect-Service**: Business services for specific use-cases.
-- **CryptoSpect-Utility**: Common utilities and helpers.
-- **CryptoSpect-Test**: Unit and integration tests.
+- **CryptoSpect.Core**: Business logic and models.
+- **CryptoSpect.DA**: Database interactions and repositories.
+- **CryptoSpect.Service**: Business services for specific use-cases.
+- **CryptoSpect.Utility**: Common utilities and helpers.
+- **CryptoSpect.Test**: Unit and integration tests.
 
 ## Prerequisites
 

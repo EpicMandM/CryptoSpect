@@ -2,14 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>CryptoSpect_Service</RootNamespace>
+    <RootNamespace>CryptoSpect.Service</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\" />
     <Folder Include="Mappers\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoSpect.Core\CryptoSpect.Core.csproj" />
   </ItemGroup>
 
 </Project>

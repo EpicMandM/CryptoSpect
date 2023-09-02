@@ -1,4 +1,4 @@
-﻿namespace CryptoSpect_DA
+namespace CryptoSpectDA
 {
     public class DbContext
     {
