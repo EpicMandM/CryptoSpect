@@ -12,28 +12,28 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public Task AddUserAsync(User user)
+    public async Task AddUserAsync(User user)
     {
-        throw new NotImplementedException();
+        await _userRepository.AddAsync(user).ConfigureAwait(false);
     }
 
-    public Task DeleteUserAsync(Guid id)
+    public async Task DeleteUserAsync(Guid id)
     {
-        throw new NotImplementedException();
+        await _userRepository.DeleteAsync(id).ConfigureAwait(false);
     }
 
-    public Task<IEnumerable<User>> GetAllUsersAsync()
+    public async Task<IEnumerable<User>> GetAllUsersAsync()
     {
-        throw new NotImplementedException();
+        return await _userRepository.GetAllAsync().ConfigureAwait(false);
     }
 
-    public Task<User> GetUserByIdAsync(Guid id)
+    public async Task<User> GetUserByIdAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
     }
 
-    public Task UpdateUserAsync(User user)
+    public async Task UpdateUserAsync(User user)
     {
-        throw new NotImplementedException();
+        await _userRepository.UpdateAsync(user).ConfigureAwait(false);
     }
 }

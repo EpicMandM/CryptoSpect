@@ -10,28 +10,28 @@ public class CryptocurrencyService : ICryptocurrencyService
     {
         _cryptocurrencyRepository = cryptocurrencyRepository;
     }
-    public Task AddCryptocurrencyAsync(Cryptocurrency cryptocurrency)
+    public async Task AddCryptocurrencyAsync(Cryptocurrency cryptocurrency)
     {
-        throw new NotImplementedException();
+        await _cryptocurrencyRepository.AddAsync(cryptocurrency).ConfigureAwait(false);
     }
 
-    public Task DeleteCryptocurrencyAsync(string id)
+    public async Task DeleteCryptocurrencyAsync(string id)
     {
-        throw new NotImplementedException();
+        await _cryptocurrencyRepository.DeleteAsync(id).ConfigureAwait(false);
     }
 
-    public Task<IEnumerable<Cryptocurrency>> GetAllCryptocurrenciesAsync()
+    public async Task<IEnumerable<Cryptocurrency>> GetAllCryptocurrenciesAsync()
     {
-        throw new NotImplementedException();
+        return await _cryptocurrencyRepository.GetAllAsync().ConfigureAwait(false);
     }
 
-    public Task<Cryptocurrency> GetCryptocurrencyByIdAsync(string id)
+    public async Task<Cryptocurrency> GetCryptocurrencyByIdAsync(string id)
     {
-        throw new NotImplementedException();
+        return await _cryptocurrencyRepository.GetByIdAsync(id).ConfigureAwait(false);
     }
 
-    public Task UpdateCryptocurrencyAsync(Cryptocurrency cryptocurrency)
+    public async Task UpdateCryptocurrencyAsync(Cryptocurrency cryptocurrency)
     {
-        throw new NotImplementedException();
+        await _cryptocurrencyRepository.UpdateAsync(cryptocurrency).ConfigureAwait(false);
     }
 }
