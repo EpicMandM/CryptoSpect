@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoSpect.DA</name>
+    </assembly>
+    <members>
+        <member name="T:CryptoSpect.DA.Repositories.CryptocurrencyRepository">
+            <summary>
+            Provides implementation for the ICryptocurrencyRepository interface.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.CryptocurrencyRepository.AddAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Asynchronously adds a new cryptocurrency.
+            </summary>
+            <param name="cryptocurrency">The cryptocurrency to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.CryptocurrencyRepository.DeleteAsync(System.String)">
+            <summary>
+            Asynchronously deletes a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The identifier of the cryptocurrency to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.CryptocurrencyRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all cryptocurrencies.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of Cryptocurrencies.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.CryptocurrencyRepository.GetByIdAsync(System.String)">
+            <summary>
+            Asynchronously retrieves a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The identifier of the cryptocurrency to retrieve.</param>
+            <returns>A Task representing the asynchronous operation, containing the Cryptocurrency.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.CryptocurrencyRepository.UpdateAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Asynchronously updates a cryptocurrency.
+            </summary>
+            <param name="cryptocurrency">The cryptocurrency to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="T:CryptoSpect.DA.Repositories.TransactionHistoryRepository">
+            <summary>
+            Provides implementation for the ITransactionHistoryRepository interface.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.TransactionHistoryRepository.AddAsync(CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Asynchronously adds a new transaction history.
+            </summary>
+            <param name="transactionHistory">The transaction history to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.TransactionHistoryRepository.DeleteAsync(System.Guid)">
+            <summary>
+            Asynchronously deletes a transaction history by its identifier.
+            </summary>
+            <param name="transactionId">The identifier of the transaction history to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.TransactionHistoryRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all transaction histories.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of TransactionHistories.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.TransactionHistoryRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Asynchronously retrieves a transaction history by its identifier.
+            </summary>
+            <param name="transactionId">The identifier of the transaction history to retrieve.</param>
+            <returns>A Task representing the asynchronous operation, containing the TransactionHistory.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.TransactionHistoryRepository.UpdateAsync(CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Asynchronously updates a transaction history.
+            </summary>
+            <param name="transactionHistory">The transaction history to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="T:CryptoSpect.DA.Repositories.UserRepository">
+            <summary>
+            Provides implementation for the IUserRepository interface.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.UserRepository.AddAsync(CryptoSpect.Core.Models.User)">
+            <summary>
+            Asynchronously adds a new user.
+            </summary>
+            <param name="user">The user to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.UserRepository.DeleteAsync(System.Guid)">
+            <summary>
+            Asynchronously deletes a user by their identifier.
+            </summary>
+            <param name="id">The identifier of the user to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.UserRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all users.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of Users.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.UserRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Asynchronously retrieves a user by their identifier.
+            </summary>
+            <param name="id">The identifier of the user to retrieve.</param>
+            <returns>A Task representing the asynchronous operation, containing the User.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+        <member name="M:CryptoSpect.DA.Repositories.UserRepository.UpdateAsync(CryptoSpect.Core.Models.User)">
+            <summary>
+            Asynchronously updates a user.
+            </summary>
+            <param name="user">The user to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+        </member>
+    </members>
+</doc>

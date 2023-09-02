@@ -5,6 +5,8 @@
     <RootNamespace>CryptoSpect.Service</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Vladyslav\source\repos\CryptoSpect\docs\CryptoSpect.Service.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Vladyslav\source\repos\CryptoSpect\docs\CryptoSpect.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +17,7 @@
     <PackageReference Include="MongoDB.Bson" />
     <ProjectReference Include="..\CryptoSpect.Core\CryptoSpect.Core.csproj" />
     <ProjectReference Include="..\CryptoSpect.DA\CryptoSpect.DA.csproj" />
+    <ProjectReference Include="..\CryptoSpect.Service\CryptoSpect.Service.csproj" />
   </ItemGroup>
 
 </Project>

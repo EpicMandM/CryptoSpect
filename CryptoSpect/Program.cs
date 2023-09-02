@@ -1,13 +1,22 @@
 using CryptoSpect.DA.Repositories;
 using CryptoSpect.Core.Interfaces;
+using CryptoSpect.Service.Implementations;
+using CryptoSpect.Service.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Register repositories
 builder.Services.AddScoped<ICryptocurrencyRepository, CryptocurrencyRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITransactionHistoryRepository, TransactionHistoryRepository>();
+
+// Register services
+builder.Services.AddScoped<ICryptocurrencyService, CryptocurrencyService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITransactionHistoryService, TransactionHistoryService>();
 
 var app = builder.Build();
 
@@ -28,4 +37,4 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.Run();
+await app.RunAsync().ConfigureAwait(false);

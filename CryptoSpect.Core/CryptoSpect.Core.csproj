@@ -5,6 +5,8 @@
     <RootNamespace>CryptoSpect.Core</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Vladyslav\source\repos\CryptoSpect\docs\CryptoSpect.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

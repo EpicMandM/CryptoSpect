@@ -8,6 +8,9 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Vladyslav\source\repos\CryptoSpect\docs\CryptoSpect.Test.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

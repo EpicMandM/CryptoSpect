@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoSpect.Core</name>
+    </assembly>
+    <members>
+        <member name="T:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository">
+            <summary>
+            Defines the contract for cryptocurrency-related repository operations.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository.GetByIdAsync(System.String)">
+            <summary>
+            Asynchronously retrieves a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the cryptocurrency.</param>
+            <returns>A Task representing the asynchronous operation, containing the Cryptocurrency.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all cryptocurrencies.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of Cryptocurrencies.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository.AddAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Asynchronously adds a new cryptocurrency.
+            </summary>
+            <param name="cryptocurrency">The cryptocurrency to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository.UpdateAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Asynchronously updates an existing cryptocurrency.
+            </summary>
+            <param name="cryptocurrency">The cryptocurrency to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ICryptocurrencyRepository.DeleteAsync(System.String)">
+            <summary>
+            Asynchronously deletes a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the cryptocurrency to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository">
+            <summary>
+            Defines the contract for transaction history-related repository operations.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Asynchronously retrieves a transaction history by its identifier.
+            </summary>
+            <param name="transactionId">The unique identifier for the transaction history.</param>
+            <returns>A Task representing the asynchronous operation, containing the TransactionHistory.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all transaction histories.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of TransactionHistories.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository.AddAsync(CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Asynchronously adds a new transaction history.
+            </summary>
+            <param name="transactionHistory">The transaction history to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository.UpdateAsync(CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Asynchronously updates an existing transaction history.
+            </summary>
+            <param name="transactionHistory">The transaction history to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.ITransactionHistoryRepository.DeleteAsync(System.Guid)">
+            <summary>
+            Asynchronously deletes a transaction history by its identifier.
+            </summary>
+            <param name="transactionId">The unique identifier for the transaction history to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:CryptoSpect.Core.Interfaces.IUserRepository">
+            <summary>
+            Defines the contract for user-related repository operations.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.IUserRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Asynchronously retrieves a user by their identifier.
+            </summary>
+            <param name="id">The unique identifier for the user.</param>
+            <returns>A Task representing the asynchronous operation, containing the User.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.IUserRepository.GetAllAsync">
+            <summary>
+            Asynchronously retrieves all users.
+            </summary>
+            <returns>A Task representing the asynchronous operation, containing an IEnumerable of Users.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.IUserRepository.AddAsync(CryptoSpect.Core.Models.User)">
+            <summary>
+            Asynchronously adds a new user.
+            </summary>
+            <param name="user">The user to add.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.IUserRepository.UpdateAsync(CryptoSpect.Core.Models.User)">
+            <summary>
+            Asynchronously updates an existing user.
+            </summary>
+            <param name="user">The user to update.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:CryptoSpect.Core.Interfaces.IUserRepository.DeleteAsync(System.Guid)">
+            <summary>
+            Asynchronously deletes a user by their identifier.
+            </summary>
+            <param name="id">The unique identifier for the user to delete.</param>
+            <returns>A Task representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:CryptoSpect.Core.Models.Cryptocurrency">
+            <summary>
+            Represents a cryptocurrency with its current and historical price data.
+            </summary>
+            <param name="Id">The unique identifier for the cryptocurrency, represented as an ObjectId in MongoDB.</param>
+            <param name="Name">The name of the cryptocurrency.</param>
+            <param name="Symbol">The trading symbol for the cryptocurrency.</param>
+            <param name="CurrentPrice">The current price of the cryptocurrency.</param>
+            <param name="HistoricalData">A read-only collection of historical price data for the cryptocurrency.</param>
+        </member>
+        <member name="M:CryptoSpect.Core.Models.Cryptocurrency.#ctor(System.String,System.String,System.String,System.Decimal,System.Collections.Generic.IReadOnlyCollection{CryptoSpect.Core.Models.HistoricalData})">
+            <summary>
+            Represents a cryptocurrency with its current and historical price data.
+            </summary>
+            <param name="Id">The unique identifier for the cryptocurrency, represented as an ObjectId in MongoDB.</param>
+            <param name="Name">The name of the cryptocurrency.</param>
+            <param name="Symbol">The trading symbol for the cryptocurrency.</param>
+            <param name="CurrentPrice">The current price of the cryptocurrency.</param>
+            <param name="HistoricalData">A read-only collection of historical price data for the cryptocurrency.</param>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.Cryptocurrency.Id">
+            <summary>The unique identifier for the cryptocurrency, represented as an ObjectId in MongoDB.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.Cryptocurrency.Name">
+            <summary>The name of the cryptocurrency.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.Cryptocurrency.Symbol">
+            <summary>The trading symbol for the cryptocurrency.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.Cryptocurrency.CurrentPrice">
+            <summary>The current price of the cryptocurrency.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.Cryptocurrency.HistoricalData">
+            <summary>A read-only collection of historical price data for the cryptocurrency.</summary>
+        </member>
+        <member name="T:CryptoSpect.Core.Models.HistoricalData">
+            <summary>
+            Represents historical price data for a cryptocurrency.
+            </summary>
+            <param name="Timestamp">The date and time when the price was recorded.</param>
+            <param name="Price">The price of the cryptocurrency at the given timestamp.</param>
+        </member>
+        <member name="M:CryptoSpect.Core.Models.HistoricalData.#ctor(System.DateTimeOffset,System.Decimal)">
+            <summary>
+            Represents historical price data for a cryptocurrency.
+            </summary>
+            <param name="Timestamp">The date and time when the price was recorded.</param>
+            <param name="Price">The price of the cryptocurrency at the given timestamp.</param>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.HistoricalData.Timestamp">
+            <summary>The date and time when the price was recorded.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.HistoricalData.Price">
+            <summary>The price of the cryptocurrency at the given timestamp.</summary>
+        </member>
+        <member name="T:CryptoSpect.Core.Models.TransactionHistory">
+            <summary>
+            Represents a transaction history in the system.
+            </summary>
+            <param name="UserId">The unique identifier for the user associated with the transaction.</param>
+            <param name="CryptocurrencyId">The identifier for the cryptocurrency involved in the transaction.</param>
+            <param name="TransactionType">The type of the transaction (e.g., "Buy", "Sell").</param>
+            <param name="Amount">The amount of cryptocurrency involved in the transaction.</param>
+            <param name="DateTime">The date and time when the transaction occurred.</param>
+        </member>
+        <member name="M:CryptoSpect.Core.Models.TransactionHistory.#ctor(System.Guid,System.String,System.String,System.Decimal,System.DateTimeOffset)">
+            <summary>
+            Represents a transaction history in the system.
+            </summary>
+            <param name="UserId">The unique identifier for the user associated with the transaction.</param>
+            <param name="CryptocurrencyId">The identifier for the cryptocurrency involved in the transaction.</param>
+            <param name="TransactionType">The type of the transaction (e.g., "Buy", "Sell").</param>
+            <param name="Amount">The amount of cryptocurrency involved in the transaction.</param>
+            <param name="DateTime">The date and time when the transaction occurred.</param>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.TransactionHistory.UserId">
+            <summary>The unique identifier for the user associated with the transaction.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.TransactionHistory.CryptocurrencyId">
+            <summary>The identifier for the cryptocurrency involved in the transaction.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.TransactionHistory.TransactionType">
+            <summary>The type of the transaction (e.g., "Buy", "Sell").</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.TransactionHistory.Amount">
+            <summary>The amount of cryptocurrency involved in the transaction.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.TransactionHistory.DateTime">
+            <summary>The date and time when the transaction occurred.</summary>
+        </member>
+        <member name="T:CryptoSpect.Core.Models.User">
+            <summary>
+            Represents a user in the system.
+            </summary>
+            <param name="Id">The unique identifier for the user.</param>
+            <param name="Username">The username of the user.</param>
+            <param name="Email">The email address of the user.</param>
+            <param name="PasswordHash">The hashed password of the user.</param>
+            <param name="LastLogin">The last login time of the user.</param>
+        </member>
+        <member name="M:CryptoSpect.Core.Models.User.#ctor(System.Guid,System.String,System.String,System.String,System.DateTimeOffset)">
+            <summary>
+            Represents a user in the system.
+            </summary>
+            <param name="Id">The unique identifier for the user.</param>
+            <param name="Username">The username of the user.</param>
+            <param name="Email">The email address of the user.</param>
+            <param name="PasswordHash">The hashed password of the user.</param>
+            <param name="LastLogin">The last login time of the user.</param>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.User.Id">
+            <summary>The unique identifier for the user.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.User.Username">
+            <summary>The username of the user.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.User.Email">
+            <summary>The email address of the user.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.User.PasswordHash">
+            <summary>The hashed password of the user.</summary>
+        </member>
+        <member name="P:CryptoSpect.Core.Models.User.LastLogin">
+            <summary>The last login time of the user.</summary>
+        </member>
+    </members>
+</doc>

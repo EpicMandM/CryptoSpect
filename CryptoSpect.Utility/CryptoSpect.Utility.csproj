@@ -5,11 +5,13 @@
     <RootNamespace>CryptoSpect.Utility</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Vladyslav\source\repos\CryptoSpect\docs\CryptoSpect.Utility.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>
