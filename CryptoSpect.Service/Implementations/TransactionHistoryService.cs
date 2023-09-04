@@ -25,7 +25,7 @@ public sealed class TransactionHistoryService : ITransactionHistoryService
     /// </summary>
     /// <param name="transactionHistory">The transaction history to add.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task AddTransactionAsync(TransactionHistory transactionHistory)
+    public async Task AddAsync(TransactionHistory transactionHistory)
     {
         await _transactionHistoryRepository.AddAsync(transactionHistory).ConfigureAwait(false);
     }
@@ -35,7 +35,7 @@ public sealed class TransactionHistoryService : ITransactionHistoryService
     /// </summary>
     /// <param name="id">The identifier of the transaction history to delete.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task DeleteTransactionAsync(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
         await _transactionHistoryRepository.DeleteAsync(id).ConfigureAwait(false);
     }
@@ -44,7 +44,7 @@ public sealed class TransactionHistoryService : ITransactionHistoryService
     /// Asynchronously retrieves all transaction histories.
     /// </summary>
     /// <returns>A Task representing the asynchronous operation, containing an IEnumerable of TransactionHistories.</returns>
-    public async Task<IEnumerable<TransactionHistory>> GetAllTransactionsAsync()
+    public async Task<IEnumerable<TransactionHistory>> GetAllAsync()
     {
         return await _transactionHistoryRepository.GetAllAsync().ConfigureAwait(false);
     }
@@ -54,7 +54,7 @@ public sealed class TransactionHistoryService : ITransactionHistoryService
     /// </summary>
     /// <param name="id">The identifier of the transaction history to retrieve.</param>
     /// <returns>A Task representing the asynchronous operation, containing the TransactionHistory.</returns>
-    public async Task<TransactionHistory> GetTransactionHistoryByIdAsync(Guid id)
+    public async Task<TransactionHistory> GetByIdAsync(Guid id)
     {
         return await _transactionHistoryRepository.GetByIdAsync(id).ConfigureAwait(false);
     }
@@ -64,7 +64,7 @@ public sealed class TransactionHistoryService : ITransactionHistoryService
     /// </summary>
     /// <param name="transactionHistory">The transaction history to update.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task UpdateTransactionAsync(TransactionHistory transactionHistory)
+    public async Task UpdateAsync(TransactionHistory transactionHistory)
     {
         await _transactionHistoryRepository.UpdateAsync(transactionHistory).ConfigureAwait(false);
     }

@@ -18,6 +18,8 @@ builder.Services.AddScoped<ICryptocurrencyService, CryptocurrencyService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITransactionHistoryService, TransactionHistoryService>();
 
+builder.Services.AddLogging();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

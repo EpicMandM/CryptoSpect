@@ -40,6 +40,7 @@ public sealed class CryptocurrencyController : ControllerBase
 
             if (cryptocurrencies?.Any() ?? true)
             {
+                LogEvents.LogNoCryptocurrenciesFound(_logger, arg2: null);
                 return NotFound();
             }
 

@@ -17,6 +17,7 @@
     <ProjectReference Include="..\CryptoSpect.Core\CryptoSpect.Core.csproj" />
     <ProjectReference Include="..\CryptoSpect.DA\CryptoSpect.DA.csproj" />
     <ProjectReference Include="..\CryptoSpect.Service\CryptoSpect.Service.csproj" />
+    <ProjectReference Include="..\CryptoSpect.Utility\CryptoSpect.Utility.csproj" />
   </ItemGroup>
 
 </Project>

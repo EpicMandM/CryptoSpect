@@ -25,7 +25,7 @@ public sealed class UserService : IUserService
     /// </summary>
     /// <param name="user">The user to add.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task AddUserAsync(User user)
+    public async Task AddAsync(User user)
     {
         await _userRepository.AddAsync(user).ConfigureAwait(false);
     }
@@ -35,7 +35,7 @@ public sealed class UserService : IUserService
     /// </summary>
     /// <param name="id">The identifier of the user to delete.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task DeleteUserAsync(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
         await _userRepository.DeleteAsync(id).ConfigureAwait(false);
     }
@@ -44,7 +44,7 @@ public sealed class UserService : IUserService
     /// Asynchronously retrieves all users.
     /// </summary>
     /// <returns>A Task representing the asynchronous operation, containing an IEnumerable of Users.</returns>
-    public async Task<IEnumerable<User>> GetAllUsersAsync()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
         return await _userRepository.GetAllAsync().ConfigureAwait(false);
     }
@@ -54,7 +54,7 @@ public sealed class UserService : IUserService
     /// </summary>
     /// <param name="id">The identifier of the user to retrieve.</param>
     /// <returns>A Task representing the asynchronous operation, containing the User.</returns>
-    public async Task<User> GetUserByIdAsync(Guid id)
+    public async Task<User> GetByIdAsync(Guid id)
     {
         return await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
     }
@@ -64,7 +64,7 @@ public sealed class UserService : IUserService
     /// </summary>
     /// <param name="user">The user to update.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>
-    public async Task UpdateUserAsync(User user)
+    public async Task UpdateAsync(User user)
     {
         await _userRepository.UpdateAsync(user).ConfigureAwait(false);
     }
