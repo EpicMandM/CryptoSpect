@@ -4,5 +4,129 @@
         <name>CryptoSpect</name>
     </assembly>
     <members>
+        <member name="T:CryptoSpect.Controllers.CryptocurrencyController">
+            <summary>
+            Provides API endpoints for managing cryptocurrencies.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.#ctor(CryptoSpect.Service.Interfaces.ICryptocurrencyService,Microsoft.Extensions.Logging.ILogger{CryptoSpect.Controllers.CryptocurrencyController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.Controllers.CryptocurrencyController"/> class.
+            </summary>
+            <param name="cryptocurrencyService">The service responsible for handling cryptocurrency operations.</param>
+            <param name="logger">The logger used to log events and issues related to the CryptocurrencyController.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.GetAllAsync">
+            <summary>
+            Retrieves all cryptocurrencies.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.GetByIdAsync(System.String)">
+            <summary>
+            Retrieves a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the cryptocurrency.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.AddAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Adds a new cryptocurrency.
+            </summary>
+            <param name="newCryptocurrency">The cryptocurrency to add.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.UpdateAsync(System.String,CryptoSpect.Core.Models.Cryptocurrency)">
+            <summary>
+            Updates an existing cryptocurrency.
+            </summary>
+            <param name="id">The unique identifier for the cryptocurrency to update.</param>
+            <param name="updatedCryptocurrency">The updated cryptocurrency data.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.CryptocurrencyController.DeleteAsync(System.String)">
+            <summary>
+            Deletes a cryptocurrency by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the cryptocurrency to delete.</param>
+        </member>
+        <member name="T:CryptoSpect.Controllers.TransactionHistoryController">
+            <summary>
+            Provides API endpoints for managing transaction histories.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.#ctor(CryptoSpect.Service.Interfaces.ITransactionHistoryService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.Controllers.TransactionHistoryController"/> class.
+            </summary>
+            <param name="transactionHistoryService">The transaction history service.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.GetAllAsync">
+            <summary>
+            Retrieves all transaction histories.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.GetByIdAsync(System.Guid)">
+            <summary>
+            Retrieves a transaction history by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the transaction history.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.AddAsync(CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Adds a new transaction history.
+            </summary>
+            <param name="newTransactionHistory">The transaction history to add.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.UpdateAsync(System.Guid,CryptoSpect.Core.Models.TransactionHistory)">
+            <summary>
+            Updates an existing transaction history.
+            </summary>
+            <param name="id">The unique identifier for the transaction history to update.</param>
+            <param name="updatedTransactionHistory">The updated transaction history data.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.DeleteAsync(System.Guid)">
+            <summary>
+            Deletes a transaction history by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the transaction history to delete.</param>
+        </member>
+        <member name="T:CryptoSpect.Controllers.UserController">
+            <summary>
+            Provides API endpoints for managing users.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.#ctor(CryptoSpect.Service.Interfaces.IUserService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.Controllers.UserController"/> class.
+            </summary>
+            <param name="userService">The user service.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.GetAllAsync">
+            <summary>
+            Retrieves all users.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.GetByIdAsync(System.Guid)">
+            <summary>
+            Retrieves a user by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the user.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.AddAsync(CryptoSpect.Core.Models.User)">
+            <summary>
+            Adds a new user.
+            </summary>
+            <param name="newUser">The user to add.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.UpdateAsync(System.Guid,CryptoSpect.Core.Models.User)">
+            <summary>
+            Updates an existing user.
+            </summary>
+            <param name="id">The unique identifier for the user to update.</param>
+            <param name="updatedUser">The updated user data.</param>
+        </member>
+        <member name="M:CryptoSpect.Controllers.UserController.DeleteAsync(System.Guid)">
+            <summary>
+            Deletes a user by its identifier.
+            </summary>
+            <param name="id">The unique identifier for the user to delete.</param>
+        </member>
     </members>
 </doc>

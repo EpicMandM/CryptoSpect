@@ -15,34 +15,34 @@
             </summary>
             <param name="cryptocurrencyRepository">The cryptocurrency repository.</param>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.AddCryptocurrencyAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.AddAsync(CryptoSpect.Core.Models.Cryptocurrency)">
             <summary>
             Asynchronously adds a new cryptocurrency.
             </summary>
             <param name="cryptocurrency">The cryptocurrency to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.DeleteCryptocurrencyAsync(System.String)">
+        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.DeleteAsync(System.String)">
             <summary>
             Asynchronously deletes a cryptocurrency by its identifier.
             </summary>
             <param name="id">The identifier of the cryptocurrency to delete.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.GetAllCryptocurrenciesAsync">
+        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.GetAllAsync">
             <summary>
             Asynchronously retrieves all cryptocurrencies.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of Cryptocurrencies.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.GetCryptocurrencyByIdAsync(System.String)">
+        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.GetByIdAsync(System.String)">
             <summary>
             Asynchronously retrieves a cryptocurrency by its identifier.
             </summary>
             <param name="id">The identifier of the cryptocurrency to retrieve.</param>
             <returns>A Task representing the asynchronous operation, containing the Cryptocurrency.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.UpdateCryptocurrencyAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+        <member name="M:CryptoSpect.Service.Implementations.CryptocurrencyService.UpdateAsync(CryptoSpect.Core.Models.Cryptocurrency)">
             <summary>
             Asynchronously updates a cryptocurrency.
             </summary>
@@ -60,34 +60,34 @@
             </summary>
             <param name="transactionHistoryRepository">The transaction history repository.</param>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.AddTransactionAsync(CryptoSpect.Core.Models.TransactionHistory)">
+        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.AddAsync(CryptoSpect.Core.Models.TransactionHistory)">
             <summary>
             Asynchronously adds a new transaction history.
             </summary>
             <param name="transactionHistory">The transaction history to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.DeleteTransactionAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.DeleteAsync(System.Guid)">
             <summary>
             Asynchronously deletes a transaction history by its identifier.
             </summary>
             <param name="id">The identifier of the transaction history to delete.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.GetAllTransactionsAsync">
+        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.GetAllAsync">
             <summary>
             Asynchronously retrieves all transaction histories.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of TransactionHistories.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.GetTransactionHistoryByIdAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.GetByIdAsync(System.Guid)">
             <summary>
             Asynchronously retrieves a transaction history by its identifier.
             </summary>
             <param name="id">The identifier of the transaction history to retrieve.</param>
             <returns>A Task representing the asynchronous operation, containing the TransactionHistory.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.UpdateTransactionAsync(CryptoSpect.Core.Models.TransactionHistory)">
+        <member name="M:CryptoSpect.Service.Implementations.TransactionHistoryService.UpdateAsync(CryptoSpect.Core.Models.TransactionHistory)">
             <summary>
             Asynchronously updates a transaction history.
             </summary>
@@ -105,34 +105,34 @@
             </summary>
             <param name="userRepository">The user repository.</param>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.UserService.AddUserAsync(CryptoSpect.Core.Models.User)">
+        <member name="M:CryptoSpect.Service.Implementations.UserService.AddAsync(CryptoSpect.Core.Models.User)">
             <summary>
             Asynchronously adds a new user.
             </summary>
             <param name="user">The user to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.UserService.DeleteUserAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Implementations.UserService.DeleteAsync(System.Guid)">
             <summary>
             Asynchronously deletes a user by their identifier.
             </summary>
             <param name="id">The identifier of the user to delete.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.UserService.GetAllUsersAsync">
+        <member name="M:CryptoSpect.Service.Implementations.UserService.GetAllAsync">
             <summary>
             Asynchronously retrieves all users.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of Users.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.UserService.GetUserByIdAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Implementations.UserService.GetByIdAsync(System.Guid)">
             <summary>
             Asynchronously retrieves a user by their identifier.
             </summary>
             <param name="id">The identifier of the user to retrieve.</param>
             <returns>A Task representing the asynchronous operation, containing the User.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Implementations.UserService.UpdateUserAsync(CryptoSpect.Core.Models.User)">
+        <member name="M:CryptoSpect.Service.Implementations.UserService.UpdateAsync(CryptoSpect.Core.Models.User)">
             <summary>
             Asynchronously updates a user.
             </summary>
@@ -144,34 +144,34 @@
             Defines the contract for cryptocurrency-related services.
             </summary>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.GetCryptocurrencyByIdAsync(System.String)">
+        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.GetByIdAsync(System.String)">
             <summary>
             Asynchronously retrieves a cryptocurrency by its identifier.
             </summary>
             <param name="id">The unique identifier for the cryptocurrency.</param>
             <returns>A Task representing the asynchronous operation, containing the Cryptocurrency.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.GetAllCryptocurrenciesAsync">
+        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.GetAllAsync">
             <summary>
             Asynchronously retrieves all cryptocurrencies.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of Cryptocurrencies.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.AddCryptocurrencyAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.AddAsync(CryptoSpect.Core.Models.Cryptocurrency)">
             <summary>
             Asynchronously adds a new cryptocurrency.
             </summary>
             <param name="cryptocurrency">The cryptocurrency to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.UpdateCryptocurrencyAsync(CryptoSpect.Core.Models.Cryptocurrency)">
+        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.UpdateAsync(CryptoSpect.Core.Models.Cryptocurrency)">
             <summary>
             Asynchronously updates an existing cryptocurrency.
             </summary>
             <param name="cryptocurrency">The cryptocurrency to update.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.DeleteCryptocurrencyAsync(System.String)">
+        <member name="M:CryptoSpect.Service.Interfaces.ICryptocurrencyService.DeleteAsync(System.String)">
             <summary>
             Asynchronously deletes a cryptocurrency by its identifier.
             </summary>
@@ -183,34 +183,34 @@
             Defines the contract for transaction history-related services.
             </summary>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.GetTransactionHistoryByIdAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.GetByIdAsync(System.Guid)">
             <summary>
             Asynchronously retrieves a transaction history by its identifier.
             </summary>
             <param name="id">The unique identifier for the transaction history.</param>
             <returns>A Task representing the asynchronous operation, containing the TransactionHistory.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.GetAllTransactionsAsync">
+        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.GetAllAsync">
             <summary>
             Asynchronously retrieves all transaction histories.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of TransactionHistories.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.AddTransactionAsync(CryptoSpect.Core.Models.TransactionHistory)">
+        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.AddAsync(CryptoSpect.Core.Models.TransactionHistory)">
             <summary>
             Asynchronously adds a new transaction history.
             </summary>
             <param name="transactionHistory">The transaction history to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.UpdateTransactionAsync(CryptoSpect.Core.Models.TransactionHistory)">
+        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.UpdateAsync(CryptoSpect.Core.Models.TransactionHistory)">
             <summary>
             Asynchronously updates an existing transaction history.
             </summary>
             <param name="transactionHistory">The transaction history to update.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.DeleteTransactionAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Interfaces.ITransactionHistoryService.DeleteAsync(System.Guid)">
             <summary>
             Asynchronously deletes a transaction history by its identifier.
             </summary>
@@ -222,34 +222,34 @@
             Defines the contract for user-related services.
             </summary>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.IUserService.GetUserByIdAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Interfaces.IUserService.GetByIdAsync(System.Guid)">
             <summary>
             Asynchronously retrieves a user by their identifier.
             </summary>
             <param name="id">The unique identifier for the user.</param>
             <returns>A Task representing the asynchronous operation, containing the User.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.IUserService.GetAllUsersAsync">
+        <member name="M:CryptoSpect.Service.Interfaces.IUserService.GetAllAsync">
             <summary>
             Asynchronously retrieves all users.
             </summary>
             <returns>A Task representing the asynchronous operation, containing an IEnumerable of Users.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.IUserService.AddUserAsync(CryptoSpect.Core.Models.User)">
+        <member name="M:CryptoSpect.Service.Interfaces.IUserService.AddAsync(CryptoSpect.Core.Models.User)">
             <summary>
             Asynchronously adds a new user.
             </summary>
             <param name="user">The user to add.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.IUserService.UpdateUserAsync(CryptoSpect.Core.Models.User)">
+        <member name="M:CryptoSpect.Service.Interfaces.IUserService.UpdateAsync(CryptoSpect.Core.Models.User)">
             <summary>
             Asynchronously updates an existing user.
             </summary>
             <param name="user">The user to update.</param>
             <returns>A Task representing the asynchronous operation.</returns>
         </member>
-        <member name="M:CryptoSpect.Service.Interfaces.IUserService.DeleteUserAsync(System.Guid)">
+        <member name="M:CryptoSpect.Service.Interfaces.IUserService.DeleteAsync(System.Guid)">
             <summary>
             Asynchronously deletes a user by their identifier.
             </summary>

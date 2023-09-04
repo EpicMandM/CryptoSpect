@@ -4,6 +4,52 @@
         <name>CryptoSpect.DA</name>
     </assembly>
     <members>
+        <member name="T:CryptoSpect.DA.Exceptions.RepositoryException">
+            <summary>
+            Represents errors that occur within the repository layer.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.RepositoryException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.RepositoryException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.RepositoryException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.RepositoryException"/> class.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.RepositoryException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.RepositoryException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="T:CryptoSpect.DA.Exceptions.ServiceException">
+            <summary>
+            Represents errors that occur within the service layer.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.ServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.ServiceException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.ServiceException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.ServiceException"/> class.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.DA.Exceptions.ServiceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoSpect.DA.Exceptions.ServiceException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
         <member name="T:CryptoSpect.DA.Repositories.CryptocurrencyRepository">
             <summary>
             Provides implementation for the ICryptocurrencyRepository interface.
