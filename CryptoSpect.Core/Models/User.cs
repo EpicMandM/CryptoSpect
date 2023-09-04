@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace CryptoSpect.Core.Models;
 
 /// <summary>
@@ -8,4 +10,4 @@ namespace CryptoSpect.Core.Models;
 /// <param name="Email">The email address of the user.</param>
 /// <param name="PasswordHash">The hashed password of the user.</param>
 /// <param name="LastLogin">The last login time of the user.</param>
-public sealed record User(Guid Id, string Username, string Email, string PasswordHash, DateTimeOffset LastLogin);
+public sealed record User([Required] Guid Id, [Required, StringLength(100)] string Username, [Required, StringLength(255), EmailAddress] string Email, [Required] string PasswordHash, DateTimeOffset LastLogin);

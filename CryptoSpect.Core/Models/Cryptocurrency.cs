@@ -1,5 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace CryptoSpect.Core.Models;
 
@@ -12,9 +13,9 @@ namespace CryptoSpect.Core.Models;
 /// <param name="CurrentPrice">The current price of the cryptocurrency.</param>
 /// <param name="HistoricalData">A read-only collection of historical price data for the cryptocurrency.</param>
 public sealed record Cryptocurrency(
-    [property: BsonId, BsonRepresentation(BsonType.ObjectId)] string Id,
-    string Name,
-    string Symbol,
+    [property: BsonId, BsonRepresentation(BsonType.ObjectId)][Required] string Id,
+    [Required, StringLength(100)] string Name,
+    [Required] string Symbol,
     decimal CurrentPrice,
     IReadOnlyCollection<HistoricalData> HistoricalData
 );
