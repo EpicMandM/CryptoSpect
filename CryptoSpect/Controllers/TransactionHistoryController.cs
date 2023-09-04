@@ -32,16 +32,16 @@ public sealed class TransactionHistoryController : ControllerBase
     {
         try
         {
-            LogEvents.GetAllUsersStarted(_logger, arg2: null);
+            LogEvents.LogGetAllUsersStarted(_logger, arg2: null);
             var transactionHistories = await _transactionHistoryService.GetAllAsync().ConfigureAwait(false);
 
             if (transactionHistories?.Any() ?? true)
             {
-                LogEvents.NoUsersFound(_logger, arg2: null);
+                LogEvents.LogNoUsersFound(_logger, arg2: null);
                 return NotFound();
             }
 
-            LogEvents.GetAllUsersCompleted(_logger, transactionHistories.Count(), arg3: null);
+            LogEvents.LogGetAllUsersCompleted(_logger, transactionHistories.Count(), arg3: null);
             return Ok(transactionHistories);
         }
         catch (Exception e)
@@ -61,13 +61,18 @@ public sealed class TransactionHistoryController : ControllerBase
         try
         {
             var transactionHistory = await _transactionHistoryService.GetByIdAsync(id).ConfigureAwait(false);
-            LogEvents.
+            if (transactionHistory is null)
+            {
+                LogEvents.LogTransactionHistoryNotFound(_logger, id, arg3: null);
+                return NotFound();
+            }
+
             return Ok(transactionHistory);
         }
-        catch (Exception)
+        catch (Exception e)
         {
-
-            throw;
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
         }
     }
 
@@ -80,10 +85,20 @@ public sealed class TransactionHistoryController : ControllerBase
     {
         if (newTransactionHistory is null)
         {
+            LogEvents.LogNullTransactionHistory(_logger, arg2: null);
             return BadRequest();
         }
-        await _transactionHistoryService.AddAsync(newTransactionHistory).ConfigureAwait(false);
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = newTransactionHistory.UserId }, newTransactionHistory);
+        try
+        {
+            await _transactionHistoryService.AddAsync(newTransactionHistory).ConfigureAwait(false);
+            LogEvents.LogTransactionHistoryUpdated(_logger, newTransactionHistory.UserId, arg3: null);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = newTransactionHistory.UserId }, newTransactionHistory);
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -94,13 +109,27 @@ public sealed class TransactionHistoryController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAsync(Guid id, [FromBody] TransactionHistory updatedTransactionHistory)
     {
-        if (updatedTransactionHistory is null || !Equals(id, updatedTransactionHistory.UserId))
+        if (updatedTransactionHistory is null)
         {
+            LogEvents.LogNullTransactionHistory(_logger, arg2: null);
+            return BadRequest();
+        }
+        if (!Equals(id, updatedTransactionHistory.UserId))
+        {
+            LogEvents.LogNoTransactionHistoriesFound(_logger, arg2: null);
             return BadRequest();
         }
 
-        await _transactionHistoryService.UpdateAsync(updatedTransactionHistory!).ConfigureAwait(false);
-        return NoContent();
+        try
+        {
+            await _transactionHistoryService.UpdateAsync(updatedTransactionHistory!).ConfigureAwait(false);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -111,7 +140,16 @@ public sealed class TransactionHistoryController : ControllerBase
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteAsync(Guid id)
     {
-        await _transactionHistoryService.DeleteAsync(id).ConfigureAwait(false);
-        return NoContent();
+        try
+        {
+            await _transactionHistoryService.DeleteAsync(id).ConfigureAwait(false);
+            LogEvents.LogTransactionHistoryDeleted(_logger, id, arg3: null);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 }

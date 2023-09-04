@@ -1,5 +1,6 @@
 using CryptoSpect.Core.Models;
 using CryptoSpect.Service.Interfaces;
+using CryptoSpect.Utility.Logging;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CryptoSpect.Controllers;
@@ -10,14 +11,17 @@ namespace CryptoSpect.Controllers;
 public sealed class UserController : ControllerBase
 {
     private readonly IUserService _userService;
+    private readonly ILogger _logger;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UserController"/> class.
     /// </summary>
     /// <param name="userService">The user service.</param>
-    public UserController(IUserService userService)
+    /// <param name="logger">The logger used to log events and issues related to the UserController.</param>
+    public UserController(IUserService userService, ILogger logger)
     {
         _userService = userService;
+        _logger = logger;
     }
 
     /// <summary>
@@ -26,7 +30,16 @@ public sealed class UserController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
-        return Ok(await _userService.GetAllAsync().ConfigureAwait(false));
+        try
+        {
+            var users = await _userService.GetAllAsync().ConfigureAwait(false);
+            return Ok(users);
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -36,7 +49,16 @@ public sealed class UserController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetByIdAsync(Guid id)
     {
-        return Ok(await _userService.GetByIdAsync(id).ConfigureAwait(false));
+        try
+        {
+            var user = await _userService.GetByIdAsync(id).ConfigureAwait(false);
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -49,10 +71,19 @@ public sealed class UserController : ControllerBase
     {
         if (newUser is null)
         {
+            LogEvents.LogNullUser(_logger, arg2: null);
             return BadRequest();
         }
-        await _userService.AddAsync(newUser).ConfigureAwait(false);
-        return CreatedAtAction(nameof(GetByIdAsync), new { id = newUser.Id }, newUser);
+        try
+        {
+            await _userService.AddAsync(newUser).ConfigureAwait(false);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = newUser.Id }, newUser);
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -63,12 +94,26 @@ public sealed class UserController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAsync(Guid id, [FromBody] User updatedUser)
     {
-        if (updatedUser is null || !Equals(id, updatedUser.Id))
+        if (updatedUser is null)
         {
+            LogEvents.LogNullUser(_logger, arg2: null);
             return BadRequest();
         }
-        await _userService.UpdateAsync(updatedUser).ConfigureAwait(false);
-        return NoContent();
+        if (!Equals(id, updatedUser.Id))
+        {
+            LogEvents.LogNoUsersFound(_logger, null);
+            return BadRequest();
+        }
+        try
+        {
+            await _userService.UpdateAsync(updatedUser).ConfigureAwait(false);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 
     /// <summary>
@@ -79,7 +124,16 @@ public sealed class UserController : ControllerBase
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteAsync(Guid id)
     {
-        await _userService.DeleteAsync(id).ConfigureAwait(false);
-        return NoContent();
+        try
+        {
+            await _userService.DeleteAsync(id).ConfigureAwait(false);
+            LogEvents.LogUserDeleted(_logger, id, arg3: null);
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            LogEvents.LogUnexpectedError(_logger, e);
+            return StatusCode(500, "Internal server error");
+        }
     }
 }
