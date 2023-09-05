@@ -88,6 +88,11 @@ public sealed class TransactionHistoryController : ControllerBase
             LogEvents.LogNullTransactionHistory(_logger, arg2: null);
             return BadRequest();
         }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
+        }
         try
         {
             await _transactionHistoryService.AddAsync(newTransactionHistory).ConfigureAwait(false);
@@ -113,6 +118,11 @@ public sealed class TransactionHistoryController : ControllerBase
         {
             LogEvents.LogNullTransactionHistory(_logger, arg2: null);
             return BadRequest();
+        }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
         }
         if (!Equals(id, updatedTransactionHistory.UserId))
         {

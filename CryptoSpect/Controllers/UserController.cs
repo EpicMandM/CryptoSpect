@@ -74,6 +74,11 @@ public sealed class UserController : ControllerBase
             LogEvents.LogNullUser(_logger, arg2: null);
             return BadRequest();
         }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
+        }
         try
         {
             await _userService.AddAsync(newUser).ConfigureAwait(false);
@@ -103,6 +108,11 @@ public sealed class UserController : ControllerBase
         {
             LogEvents.LogNoUsersFound(_logger, null);
             return BadRequest();
+        }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
         }
         try
         {

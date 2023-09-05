@@ -181,7 +181,15 @@ public static class LogEvents
     /// </summary>
     public static readonly Action<ILogger, Exception?> LogUnexpectedError =
         LoggerMessage.Define(LogLevel.Critical, new EventId((int)LogEventId.UnexpectedError, "Unexpected Error"), "An unexpected error occurred.");
+
+    /// <summary>
+    /// Event indicating that the model state for a request was invalid.
+    /// </summary>
+    public static readonly Action<ILogger, string, Exception?> LogInvalidModelState =
+        LoggerMessage.Define<string>(LogLevel.Warning, new EventId((int)LogEventId.InvalidModelState, "Invalid Model State"), "Invalid model state for the request. Errors: {ModelStateErrors}");
+
     #endregion
+
 }
 
 /// <summary>
@@ -325,10 +333,15 @@ public enum LogEventId
     #endregion
 
     #region General events
+
     /// <summary>
     /// Indicates an error occurred while accessing the database.
     /// </summary>
     DatabaseError = 900,
+    /// <summary>
+    /// Indicates the model state for a request was invalid.
+    /// </summary>
+    InvalidModelState,
 
     /// <summary>
     /// Indicates an error occurred while accessing an external API.
@@ -339,5 +352,6 @@ public enum LogEventId
     /// Indicates an unexpected error occurred.
     /// </summary>
     UnexpectedError
+
     #endregion
 }

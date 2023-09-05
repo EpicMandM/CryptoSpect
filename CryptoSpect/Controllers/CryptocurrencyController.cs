@@ -90,6 +90,11 @@ public sealed class CryptocurrencyController : ControllerBase
             LogEvents.LogNullCryptocurrency(_logger, arg2: null);
             return BadRequest();
         }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
+        }
         try
         {
             await _cryptocurrencyService.AddAsync(newCryptocurrency).ConfigureAwait(false);
@@ -120,6 +125,11 @@ public sealed class CryptocurrencyController : ControllerBase
         {
             LogEvents.LogCryptocurrencyNotFound(_logger, updatedCryptocurrency.Id, arg3: null);
             return BadRequest();
+        }
+        if (!ModelState.IsValid)
+        {
+            LogEvents.LogInvalidModelState(_logger, string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)), null);
+            return BadRequest(ModelState);
         }
         try
         {
