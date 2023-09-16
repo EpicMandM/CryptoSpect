@@ -74,6 +74,21 @@
             Event indicating a user was deleted.
             </summary>
         </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogGetAllUsersStarted">
+            <summary>
+            Event indicating the start of the process to retrieve all users.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogGetAllUsersCompleted">
+            <summary>
+            Event indicating the successful completion of the process to retrieve all users.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogNoUsersFound">
+            <summary>
+            Event indicating that no users were found during the retrieval process.
+            </summary>
+        </member>
         <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogNullTransactionHistory">
             <summary>
             Event indicating an attempt to add a null transaction history.
@@ -99,6 +114,21 @@
             Event indicating a transaction history was deleted.
             </summary>
         </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogGetAllTransactionHistoriesStarted">
+            <summary>
+            Event indicating the start of the process to retrieve all cryptocurrencies.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogGetAllTransactionHistoriesCompleted">
+            <summary>
+            Event indicating the successful completion of the process to retrieve all cryptocurrencies.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogNoTransactionHistoriesFound">
+            <summary>
+            Event indicating that no cryptocurrencies were found.
+            </summary>
+        </member>
         <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogDatabaseError">
             <summary>
             Event indicating an error occurred while accessing the database.
@@ -112,6 +142,161 @@
         <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogUnexpectedError">
             <summary>
             Event indicating an unexpected error occurred.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEvents.LogInvalidModelState">
+            <summary>
+            Event indicating that the model state for a request was invalid.
+            </summary>
+        </member>
+        <member name="T:CryptoSpect.Utility.Logging.LogEventId">
+            <summary>
+            Defines the event IDs used for logging.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.None">
+            <summary>
+            Represents the default or uninitialized state for logging events.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NullCryptocurrency">
+            <summary>
+            Indicates an attempt to add a null cryptocurrency.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.CryptocurrencyNotFound">
+            <summary>
+            Indicates that a cryptocurrency with a specified ID was not found.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.CryptocurrencyAdded">
+            <summary>
+            Indicates that a new cryptocurrency was added.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.CryptocurrencyUpdated">
+            <summary>
+            Indicates that a cryptocurrency was updated.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.CryptocurrencyDeleted">
+            <summary>
+            Indicates that a cryptocurrency was deleted.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllCryptocurrenciesStarted">
+            <summary>
+            Indicates the start of retrieving all cryptocurrencies.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllCryptocurrenciesCompleted">
+            <summary>
+            Indicates the successful retrieval of all cryptocurrencies.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NoCryptocurrenciesFound">
+            <summary>
+            Indicates that no cryptocurrencies were found.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NullUser">
+            <summary>
+            Indicates an attempt to add a null user.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.UserNotFound">
+            <summary>
+            Indicates that a user with a specified ID was not found.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.UserAdded">
+            <summary>
+            Indicates that a new user was added.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.UserUpdated">
+            <summary>
+            Indicates that a user was updated.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.UserDeleted">
+            <summary>
+            Indicates that a user was deleted.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllUsersStarted">
+            <summary>
+            Indicates the start of the process to retrieve all users.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllUsersCompleted">
+            <summary>
+            Indicates the successful completion of the process to retrieve all users.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NoUsersFound">
+            <summary>
+            Indicates that no users were found during the retrieval process.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NullTransactionHistory">
+            <summary>
+            Indicates an attempt to add a null transaction history.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.TransactionHistoryNotFound">
+            <summary>
+            Indicates that a transaction history with a specified ID was not found.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.TransactionHistoryAdded">
+            <summary>
+            Indicates that a new transaction history was added.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.TransactionHistoryUpdated">
+            <summary>
+            Indicates that a transaction history was updated.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.TransactionHistoryDeleted">
+            <summary>
+            Indicates that a transaction history was deleted.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllTransactionHistoriesStarted">
+            <summary>
+            Indicates the start of retrieving all transaction histories.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.GetAllTransactionHistoriesCompleted">
+            <summary>
+            Indicates the successful retrieval of all transaction histories.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.NoTransactionHistoriesFound">
+            <summary>
+            Indicates that no transaction histories were found.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.DatabaseError">
+            <summary>
+            Indicates an error occurred while accessing the database.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.InvalidModelState">
+            <summary>
+            Indicates the model state for a request was invalid.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.ExternalApiError">
+            <summary>
+            Indicates an error occurred while accessing an external API.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Utility.Logging.LogEventId.UnexpectedError">
+            <summary>
+            Indicates an unexpected error occurred.
             </summary>
         </member>
     </members>

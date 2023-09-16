@@ -4,5 +4,35 @@
         <name>CryptoSpect.Test</name>
     </assembly>
     <members>
+        <member name="T:CryptoSpect.Test.CryptocurrencyServiceTests">
+            <summary>
+            Contains unit tests for the CryptocurrencyService class.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Test.CryptocurrencyServiceTests._mockCryptocurrencyRepository">
+            <summary>
+            Mock of the ICryptocurrencyRepository interface.
+            </summary>
+        </member>
+        <member name="F:CryptoSpect.Test.CryptocurrencyServiceTests._cryptocurrencyService">
+            <summary>
+            Instance of the ICryptocurrencyService being tested.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Test.CryptocurrencyServiceTests.#ctor">
+            <summary>
+            Initializes a new instance of the CryptocurrencyServiceTests class.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Test.CryptocurrencyServiceTests.AddAsyncShouldCallRepositoryAddAsyncWhenValidCryptocurrencyIsProvidedAsync">
+            <summary>
+            Tests that the AddAsync method of the CryptocurrencyService class calls the AddAsync method of the repository when a valid cryptocurrency is provided.
+            </summary>
+        </member>
+        <member name="M:CryptoSpect.Test.CryptocurrencyServiceTests.GetByIdAsyncShouldReturnCryptocurrencyWhenValidIdIsProvidedAsync">
+            <summary>
+            Tests that the GetByIdAsync method of the CryptocurrencyService class returns the expected cryptocurrency when a valid ID is provided.
+            </summary>
+        </member>
     </members>
 </doc>

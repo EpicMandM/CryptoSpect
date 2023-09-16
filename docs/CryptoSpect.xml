@@ -51,11 +51,12 @@
             Provides API endpoints for managing transaction histories.
             </summary>
         </member>
-        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.#ctor(CryptoSpect.Service.Interfaces.ITransactionHistoryService)">
+        <member name="M:CryptoSpect.Controllers.TransactionHistoryController.#ctor(CryptoSpect.Service.Interfaces.ITransactionHistoryService,Microsoft.Extensions.Logging.ILogger)">
             <summary>
             Initializes a new instance of the <see cref="T:CryptoSpect.Controllers.TransactionHistoryController"/> class.
             </summary>
             <param name="transactionHistoryService">The transaction history service.</param>
+            <param name="logger">The logger used to log events and issues related to the TransactionHistoryController.</param>
         </member>
         <member name="M:CryptoSpect.Controllers.TransactionHistoryController.GetAllAsync">
             <summary>
@@ -92,11 +93,12 @@
             Provides API endpoints for managing users.
             </summary>
         </member>
-        <member name="M:CryptoSpect.Controllers.UserController.#ctor(CryptoSpect.Service.Interfaces.IUserService)">
+        <member name="M:CryptoSpect.Controllers.UserController.#ctor(CryptoSpect.Service.Interfaces.IUserService,Microsoft.Extensions.Logging.ILogger)">
             <summary>
             Initializes a new instance of the <see cref="T:CryptoSpect.Controllers.UserController"/> class.
             </summary>
             <param name="userService">The user service.</param>
+            <param name="logger">The logger used to log events and issues related to the UserController.</param>
         </member>
         <member name="M:CryptoSpect.Controllers.UserController.GetAllAsync">
             <summary>
